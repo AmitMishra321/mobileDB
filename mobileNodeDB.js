@@ -46,7 +46,7 @@ app.get("/svr/mobiles",function(req,res){
       rows=filterParams(rows,"os",os)
       res.send({...data,rows:rows})
    }
-   client.end();
+   // client.end();
    })
 })
 filterParams=(arr,name,value)=>{
@@ -87,7 +87,7 @@ app.get("/svr/mobiles/:opt",function(req,res){
    client.query(sql,[opt],function(err,result){
       if(err) res.send(err)
        res.send(result)
-       client.end();
+      //  client.end();
       })
 }
 })
